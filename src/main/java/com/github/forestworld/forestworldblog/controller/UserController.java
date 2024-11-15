@@ -16,11 +16,13 @@ public class UserController {
 
     @Resource
     private UserService userService;
+
     @GetMapping("/add")
     @SaCheckLogin
     public ResultBean<String> addUser() {
         return userService.addUser();
     }
+
 
     @RequestMapping("doLogin")
     public String doLogin(String username, String password) {
@@ -31,4 +33,5 @@ public class UserController {
         }
         return "登录失败";
     }
+
 }
